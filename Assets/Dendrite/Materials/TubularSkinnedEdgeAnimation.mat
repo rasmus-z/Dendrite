@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TubularSkinnedEdgeStandard
-  m_Shader: {fileID: 4800000, guid: c78dc1c3ff175c540ae3d6009d463e52, type: 3}
+  m_Name: TubularSkinnedEdgeAnimation
+  m_Shader: {fileID: 4800000, guid: de580709412c07e4eb4e67a01ecfb9b2, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -74,6 +74,7 @@ Material:
     - _Mode: 0
     - _Near: 0.5
     - _OcclusionStrength: 1
+    - _Offset: 0
     - _Parallax: 0.02
     - _Size: 0.009
     - _SmoothnessTextureChannel: 0

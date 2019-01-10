@@ -1,10 +1,10 @@
-﻿Shader "Dendrite/TubularEdgeStandardTree"
+﻿Shader "Dendrite/TubularSkinnedEdgeAnimation"
 {
 
   Properties
   {
-    _Thickness ("Thickness", Range(0.01, 0.1)) = 0.1
-    _Depth ("Depth", Range(10, 100)) = 50
+    _Thickness ("Thickness", Range(0.001, 0.1)) = 0.1
+    _Offset ("Offset", Float) = 0
 
     _Color ("Color", Color) = (1, 1, 1, 1)
     [HDR] _Emission ("Emission", Color) = (1, 1, 1, 1)
@@ -18,21 +18,21 @@
   {
     Tags { "RenderType" = "Opaque" }
     LOD 100
-    Cull Off
 
     Pass
     {
       Tags { "LightMode" = "Deferred" }
       CGPROGRAM
       #pragma target 4.0
-      #pragma vertex vert
+      #pragma vertex vert_animation
       #pragma geometry geom
       #pragma fragment frag
       #pragma multi_compile_prepassfinal noshadowmask nodynlightmap nodirlightmap nolightmap
       #pragma multi_compile_instancing
       #pragma instancing_options procedural:setup
-      #define THICKNESS_BY_DEPTH
+      #define SKINNED
       #include "./TubularEdgeCommon.hlsl"
+      #include "./TubularEdgeAnimation.hlsl"
       ENDCG
     }
 
@@ -41,15 +41,18 @@
       Tags { "LightMode" = "ShadowCaster" }
       CGPROGRAM
       #pragma target 4.0
-      #pragma vertex vert
+      #pragma vertex vert_animation
       #pragma geometry geom
       #pragma fragment frag
       #pragma multi_compile_shadowcaster noshadowmask nodynlightmap nodirlightmap nolightmap
       #pragma multi_compile_instancing
       #pragma instancing_options procedural:setup
-      #define THICKNESS_BY_DEPTH
+      #define SKINNED
       #include "./TubularEdgeCommon.hlsl"
+      #include "./TubularEdgeAnimation.hlsl"
       ENDCG
     }
+
   }
+
 }

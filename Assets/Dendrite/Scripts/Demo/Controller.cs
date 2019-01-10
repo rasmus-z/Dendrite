@@ -49,17 +49,17 @@ namespace Dendrite.Demo
                     using (new GUILayout.HorizontalScope())
                     {
                         GUILayout.Label("growth : ", GUILayout.Width(labelWidth));
-                        dendrite.GrowthDistance = GUILayout.HorizontalSlider(dendrite.GrowthDistance, 0.25f, 2f, GUILayout.Width(sliderWidth));
+                        dendrite.GrowthDistance = GUILayout.HorizontalSlider(dendrite.GrowthDistance, 0.25f, 1f, GUILayout.Width(sliderWidth));
                     }
                     using (new GUILayout.HorizontalScope())
                     {
                         GUILayout.Label("kill : ", GUILayout.Width(labelWidth));
-                        dendrite.KillDistance = GUILayout.HorizontalSlider(dendrite.KillDistance, 0.25f, 2f, GUILayout.Width(sliderWidth));
+                        dendrite.KillDistance = GUILayout.HorizontalSlider(dendrite.KillDistance, 0.25f, 1f, GUILayout.Width(sliderWidth));
                     }
                     using (new GUILayout.HorizontalScope())
                     {
                         GUILayout.Label("speed : ", GUILayout.Width(labelWidth));
-                        dendrite.GrowthSpeed = GUILayout.HorizontalSlider(dendrite.GrowthSpeed, 0.25f, 100f, GUILayout.Width(sliderWidth));
+                        dendrite.GrowthSpeed = GUILayout.HorizontalSlider(dendrite.GrowthSpeed, 0.25f, 300f, GUILayout.Width(sliderWidth));
                     }
 
                     using (new GUILayout.HorizontalScope())
